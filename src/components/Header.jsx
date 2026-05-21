@@ -65,7 +65,10 @@ function Header({ currentPage, setCurrentPage, user, onLogout }) {
             Tutorial
           </a>
           <a
-            href="/pricing.html"
+            onClick={() => {
+              setCurrentPage('pricing');
+              navigate('/pricing');
+            }}
             style={{
               ...styles.navLink,
               ...(currentPage === 'pricing' ? styles.navLinkActive : {})

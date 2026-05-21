@@ -3,9 +3,13 @@ import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import About from "./pages/About";
+import Tutorial from "./pages/Tutorial";
+import Contact from "./pages/Contact";
 import WorkforceSuite from "./pages/WorkforceSuite";
 import OperationsSuite from "./pages/OperationsSuite";
 import QualitySuite from "./pages/QualitySuite";
+import Pricing from "./pages/Pricing";
 
 import "./styles/global.css";
 
@@ -95,9 +99,10 @@ function App() {
         <Route path="/quality" element={<QualitySuite />} />
 
         {/* OLD PAGES (TEMP UNTIL YOU BUILD THEM) */}
-        <Route path="/about" element={<ComingSoonPage title="About Page" />} />
-        <Route path="/tutorial" element={<ComingSoonPage title="Tutorial Page" />} />
-        <Route path="/contact" element={<ComingSoonPage title="Contact Page" />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/tutorial" element={<Tutorial />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/pricing" element={<Pricing />} /> 
       </Routes>
     </div>
   );
