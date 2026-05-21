@@ -19,10 +19,10 @@ function Header({ currentPage, setCurrentPage, user, onLogout }) {
           <div style={styles.logoGlow} className="logo-pulse" />
           
           {/* Logo Image - Larger and clearer */}
-          <img 
-            src="/logo.png"  
-            style={styles.logoImage}
-          />
+        <img 
+  src="./logo.png"  
+  style={styles.logoImage}
+/>
           
         </div>
 
@@ -64,7 +64,16 @@ function Header({ currentPage, setCurrentPage, user, onLogout }) {
           >
             Tutorial
           </a>
-          <a 
+          <a
+            href="/pricing.html"
+            style={{
+              ...styles.navLink,
+              ...(currentPage === 'pricing' ? styles.navLinkActive : {})
+            }}
+          >
+            Pricing
+          </a>
+          <a
             onClick={() => {
               setCurrentPage('contact');
               navigate('/contact');
@@ -78,22 +87,6 @@ function Header({ currentPage, setCurrentPage, user, onLogout }) {
           </a>
         </nav>
 
-        {/* Auth Buttons */}
-        <div style={styles.authButtons}>
-          {user ? (
-            <>
-              <span style={styles.userName}>Hi, {user.name}</span>
-              <button onClick={onLogout} style={styles.logoutButton}>
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <button style={styles.loginButton}>Login</button>
-              <button style={styles.signupButton}>Sign Up</button>
-            </>
-          )}
-        </div>
       </div>
     </header>
   )
@@ -169,50 +162,6 @@ const styles = {
   navLinkActive: {
     color: '#00D9FF',
     background: 'rgba(0, 217, 255, 0.1)',
-  },
-  authButtons: {
-    display: 'flex',
-    gap: '12px',
-    alignItems: 'center',
-  },
-  userName: {
-    color: '#00D9FF',
-    fontSize: '14px',
-    fontWeight: '500',
-  },
-  loginButton: {
-    padding: '10px 24px',
-    background: 'transparent',
-    border: '2px solid #00D9FF',
-    borderRadius: '8px',
-    color: '#00D9FF',
-    fontSize: '14px',
-    fontWeight: '600',
-    cursor: 'pointer',
-    transition: 'all 0.3s ease',
-  },
-  signupButton: {
-    padding: '10px 24px',
-    background: 'linear-gradient(135deg, #0066FF 0%, #00D9FF 100%)',
-    border: 'none',
-    borderRadius: '8px',
-    color: '#fff',
-    fontSize: '14px',
-    fontWeight: '600',
-    cursor: 'pointer',
-    boxShadow: '0 0 20px rgba(0, 102, 255, 0.4)',
-    transition: 'all 0.3s ease',
-  },
-  logoutButton: {
-    padding: '10px 24px',
-    background: 'rgba(239, 68, 68, 0.1)',
-    border: '2px solid #EF4444',
-    borderRadius: '8px',
-    color: '#EF4444',
-    fontSize: '14px',
-    fontWeight: '600',
-    cursor: 'pointer',
-    transition: 'all 0.3s ease',
   },
 }
 
