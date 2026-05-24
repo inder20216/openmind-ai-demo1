@@ -4,8 +4,17 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>openmind-ai-demo</title>
-    <script type="module" crossorigin src="/assets/index-DGEBHgEO.js"></script>
+    <title>ChatBot Marketplace</title>
+    <script>
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-CYE2cn9_.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-CTaX4gqa.css">
   </head>
   <body>
